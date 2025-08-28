@@ -1,8 +1,13 @@
 package com.LucasVicentee.GerenciamentoDeEstoque.dto;
 
-    public class LoginDTO {
+import jakarta.validation.constraints.NotBlank;
 
+public class LoginDTO {
+
+    @NotBlank
     private String usuarioOuEmail;
+
+    @NotBlank
     private String senha;
 
     public LoginDTO() {
