@@ -3,8 +3,8 @@ package com.LucasVicentee.GerenciamentoDeEstoque.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "login")
-public class Login {
+@Table(name = "usuario")
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +14,11 @@ public class Login {
     private String email;
     private String senha;
 
-    public Login() {
+    public Usuario() {
 
     }
 
-    public Login(Long id, String usuario, String email, String senha) {
+    public Usuario(Long id, String usuario, String email, String senha) {
         this.id = id;
         this.usuario = usuario;
         this.email = email;
