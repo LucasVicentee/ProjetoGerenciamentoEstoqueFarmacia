@@ -1,6 +1,7 @@
 package com.LucasVicentee.GerenciamentoDeEstoque.controllers;
 
 import com.LucasVicentee.GerenciamentoDeEstoque.dto.CadastroDTO;
+import com.LucasVicentee.GerenciamentoDeEstoque.dto.UsuarioResponseDTO;
 import com.LucasVicentee.GerenciamentoDeEstoque.entities.Usuario;
 import com.LucasVicentee.GerenciamentoDeEstoque.repositories.UsuarioRepository;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class CadastroController {
     }
 
     @PostMapping("/Cadastro")
-    public ResponseEntity<Usuario> cadastrar(@RequestBody CadastroDTO dto) {
+    public ResponseEntity<UsuarioResponseDTO> cadastrar(@RequestBody CadastroDTO dto) {
         // Converter DTO para entidade
         Usuario usuario = new Usuario();
         usuario.setUsuario(dto.getUsuario());
@@ -29,6 +30,11 @@ public class CadastroController {
 
         Usuario usuarioCadastrado = usuarioRepository.save(usuario);
 
-        return ResponseEntity.ok(usuarioCadastrado);
+        UsuarioResponseDTO responseDTO = new UsuarioResponseDTO(
+                usuarioCadastrado.getId(),
+                usuarioCadastrado.getUsuario(),
+                usuarioCadastrado.getEmail()
+        );
+        return ResponseEntity.ok(responseDTO);
     }
 }
