@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         //Enviando os dados para o backend
-        fetch("https://localhost8080/Cadastro", {
+        fetch("https://localhost:8080/Cadastro", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
