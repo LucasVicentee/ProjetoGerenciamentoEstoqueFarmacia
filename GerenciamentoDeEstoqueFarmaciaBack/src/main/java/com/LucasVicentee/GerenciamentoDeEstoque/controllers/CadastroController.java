@@ -6,29 +6,33 @@ import com.LucasVicentee.GerenciamentoDeEstoque.entities.Usuario;
 import com.LucasVicentee.GerenciamentoDeEstoque.repositories.UsuarioRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/cadastro")
 public class CadastroController {
 
-    private UsuarioRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
 
     public CadastroController(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
+    // Serve a página HTML
+    @GetMapping
+    public String cadastroPage() {
+        return "cadastro"; // arquivo cadastro.html em src/main/resources/templates
+    }
+
+    // Recebe dados do frontend via POST
     @PostMapping
+    @ResponseBody
     public ResponseEntity<UsuarioResponseDTO> cadastrar(@RequestBody CadastroDTO dto) {
-        // Converter DTO para entidade
         Usuario usuario = new Usuario();
         usuario.setUsuario(dto.getUsuario());
         usuario.setEmail(dto.getEmail());
 
-        //Salvando a senha já criptografada
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         usuario.setSenha(encoder.encode(dto.getSenha()));
 
@@ -39,6 +43,7 @@ public class CadastroController {
                 usuarioCadastrado.getUsuario(),
                 usuarioCadastrado.getEmail()
         );
+
         return ResponseEntity.ok(responseDTO);
     }
 }
