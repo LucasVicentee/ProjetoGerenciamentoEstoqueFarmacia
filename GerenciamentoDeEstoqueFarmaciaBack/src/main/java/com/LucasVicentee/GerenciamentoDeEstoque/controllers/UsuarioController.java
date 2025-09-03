@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@CrossOrigin(origins = "*")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
     private final UsuarioRepository usuarioRepository;
@@ -21,13 +22,13 @@ public class UsuarioController {
     }
 
     // Serve a página HTML
-    @GetMapping("/usuarios")
+    @GetMapping
     public List<Usuario> listaUsuarios() {
         return usuarioRepository.findAll();
     }
 
     // Recebe dados do frontend via POST
-    @PostMapping("/usuarios")
+    @PostMapping
     @ResponseBody
     public ResponseEntity<UsuarioResponseDTO> cadastrar(@RequestBody CadastroDTO dto) {
         Usuario usuario = new Usuario();

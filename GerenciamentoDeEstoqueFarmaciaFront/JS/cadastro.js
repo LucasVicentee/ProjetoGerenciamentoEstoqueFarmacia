@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         //Pega os valores dos formulário
         const usuario = document.getElementById("usuario").value;
         const email = document.getElementById("email").value;
-        const senha = Document.getElementById("senha").value;
+        const senha = document.getElementById("senha").value;
 
         //Monta o objeto para envio
         const cadastroData = {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         //Enviando os dados para o backend
-        fetch("http://localhost:8080/cadastro", {
+        fetch("http://localhost:8080/usuarios", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
