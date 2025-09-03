@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
-@RequestMapping("/usuarios")
+@CrossOrigin(origins = "*") //Serve para aceitar todas as requisições
+@RequestMapping("/usuarios") //Caminho da API para todos as outras funcionalidades desta classe
 public class UsuarioController {
 
     private final UsuarioRepository usuarioRepository;
