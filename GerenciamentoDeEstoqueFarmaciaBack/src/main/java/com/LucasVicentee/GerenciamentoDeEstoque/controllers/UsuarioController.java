@@ -6,27 +6,28 @@ import com.LucasVicentee.GerenciamentoDeEstoque.entities.Usuario;
 import com.LucasVicentee.GerenciamentoDeEstoque.repositories.UsuarioRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/cadastro")
-public class CadastroController {
+import java.util.List;
+
+@RestController
+@RequestMapping
+public class UsuarioController {
 
     private final UsuarioRepository usuarioRepository;
 
-    public CadastroController(UsuarioRepository usuarioRepository) {
+    public UsuarioController(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
     // Serve a página HTML
-    @GetMapping
-    public String cadastroPage() {
-        return "cadastro"; // arquivo cadastro.html em src/main/resources/templates
+    @GetMapping("/usuarios")
+    public List<Usuario> listaUsuarios() {
+        return usuarioRepository.findAll();
     }
 
     // Recebe dados do frontend via POST
-    @PostMapping
+    @PostMapping("/usuarios")
     @ResponseBody
     public ResponseEntity<UsuarioResponseDTO> cadastrar(@RequestBody CadastroDTO dto) {
         Usuario usuario = new Usuario();
