@@ -47,4 +47,8 @@ public class UsuarioController {
 
         return ResponseEntity.ok(responseDTO);
     }
+
+    //@PutMapping //Para alterar os dados já existentes
+
+    //@DeleteMapping //Para deletar os dados já existentes
 }
