@@ -25,7 +25,7 @@ main {
     border-radius: 5px;
     box-shadow: 0 0 10px;
     width: 300px;
-    height: 380px;
+    height: 400px;
     margin-top: 100px;
     border-radius: 20px;
 }
@@ -47,7 +47,7 @@ main {
 }
 
 #login button {
-    margin-top: 20px;
+    margin-top: 13px;
     padding: 10px;
     background-color: black;
     color: white;
@@ -58,6 +58,11 @@ main {
 
 #login button:hover {
     background-color: grey;
+}
+
+#login p {
+    margin-top: 20px;
+    text-align: center;
 }
 
 footer {
