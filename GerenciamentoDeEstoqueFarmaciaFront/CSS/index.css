@@ -12,6 +12,33 @@ header {
     text-align: center;
 }
 
+#menu-navegacao {
+    color: white;
+    background-color: black;
+    width: 170px;
+    height: 100%;
+    position: fixed;
+}
+
+#menu-navegacao ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu-navegacao ul li {
+    padding-left: 50px;
+    margin-top: 30px;
+}
+
+#menu-navegacao ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu-navegacao ul li a:hover {
+    text-decoration: underline;
+}
+
 main {
     flex: 1;
     display: flex;
