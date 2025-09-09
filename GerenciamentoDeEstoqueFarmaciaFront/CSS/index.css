@@ -17,16 +17,21 @@ header {
     background-color: black;
     width: 170px;
     height: 100%;
-    position: fixed;
+    display: flex;
+    flex-direction: row;
 }
 
 #menu-navegacao ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
 }
 
 #menu-navegacao ul li {
-    padding-left: 50px;
+    padding-left: 20px;
     margin-top: 30px;
 }
 
