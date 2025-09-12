@@ -1,0 +1,14 @@
+#carouselExampleCaptions {
+    max-width: 800px; /* largura máxima do carousel */
+    margin: 0 auto;   /* centralizar na página */
+}
+
+#carouselExampleCaptions .carousel-item img {
+    height: 400px;    /* altura fixa */
+    object-fit: cover; /* mantém a proporção da imagem e corta excesso */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 0 10px black); /* cria contorno escuro */
+}
