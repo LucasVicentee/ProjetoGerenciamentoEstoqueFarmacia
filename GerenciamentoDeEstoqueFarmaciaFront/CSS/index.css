@@ -1,14 +1,77 @@
+body {
+    background-color: rgb(255, 255, 255); /* cor de fundo clara */
+    color: #212529;            /* cor do texto escura */
+    font-family: Arial, sans-serif; /* fonte legível */
+}
+
+header {
+    background-color: rgba(33, 150, 243, 0.7); /* cor de fundo do cabeçalho */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* sombra sutil */
+}
+
+h1 {
+    color: white; /* cor do título no cabeçalho */
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#menu-navegacao {
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-navegacao ul {    
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-navegacao li {
+    margin: 0 15px;
+}
+
+#menu-navegacao li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+#menu-navegacao li a:hover {
+    text-decoration: underline;
+}
+
 #carouselExampleCaptions {
-    max-width: 800px; /* largura máxima do carousel */
-    margin: 0 auto;   /* centralizar na página */
+    max-width: 700px; 
+    max-height: 700px; 
+    margin: 0 auto;   /* centralizar carousel na página */
+    margin-right: 5%;
+    margin-top: 5%;
 }
 
 #carouselExampleCaptions .carousel-item img {
-    height: 400px;    /* altura fixa */
+    height: 400px;    /* altura fixa da imagem */
     object-fit: cover; /* mantém a proporção da imagem e corta excesso */
+    border-radius: 10px;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: drop-shadow(0 0 10px black); /* cria contorno escuro */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: drop-shadow(0 0 10px black); /* Contorno escuro em volta das setas de navegação do carousel */
 }
