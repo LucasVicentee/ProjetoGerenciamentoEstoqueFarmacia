@@ -1,4 +1,6 @@
+
 body {
+    font-family: 'Roboto', sans-serif; /* Fonte do Google */
     background-color: rgb(255, 255, 255); /* cor de fundo clara */
     color: #212529;            /* cor do texto escura */
     font-family: Arial, sans-serif; /* fonte legível */
@@ -44,6 +46,7 @@ main {
 
 #menu-navegacao li {
     margin: 0 15px;
+    font-size: 18px;
 }
 
 #menu-navegacao li a {
@@ -62,8 +65,15 @@ main {
     max-width: 700px; 
     max-height: 700px; 
     margin: 0 auto;   /* centralizar carousel na página */
-    margin-right: 5%;
-    margin-top: 5%;
+    margin-right: 2%;
+    margin-top: 10%;
+}
+
+#carouselExampleCaptions .carousel-inner {
+    border-radius: 10px; /* bordas arredondadas para o carousel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* sombra para dar profundidade */
+    text-shadow: 4px 4px 4px black; /* sombra no texto para melhor leitura do texto na imagem */
+    font-size: 18px;
 }
 
 #carouselExampleCaptions .carousel-item img {
